@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "activeProfile": "default",
+  "logging": {
+    "enabled": true,
+    "level": "info",
+    "logDirectory": "logs"
+  },
+  "safety": {
+    "globalEnabled": false,
+    "toggleHotkey": "F9",
+    "emergencyStopHotkey": "F10",
+    "wheelDebounceMs": 120
+  },
+  "profiles": [
+    {
+      "name": "default",
+      "leader": {
+        "hwnd": 0,
+        "exe": "rift_x64.exe",
+        "titleContains": "RIFT",
+        "class": ""
+      },
+      "followers": [
+        {
+          "name": "Follower1",
+          "hwnd": 0,
+          "exe": "rift_x64.exe",
+          "titleContains": "RIFT",
+          "class": ""
+        },
+        {
+          "name": "Follower2",
+          "hwnd": 0,
+          "exe": "rift_x64.exe",
+          "titleContains": "RIFT",
+          "class": ""
+        }
+      ],
+      "mappings": [
+        {
+          "input": "1",
+          "type": "keyboard",
+          "enabled": true,
+          "targets": "followers"
+        },
+        {
+          "input": "RButton",
+          "type": "mouse_button",
+          "enabled": true,
+          "targets": "followers"
+        },
+        {
+          "input": "WheelUp",
+          "type": "mouse_wheel",
+          "enabled": true,
+          "targets": "followers"
+        },
+        {
+          "input": "WheelDown",
+          "type": "mouse_wheel",
+          "enabled": true,
+          "targets": "followers"
+        }
+      ]
+    }
+  ]
+}
