@@ -6,18 +6,21 @@ Its purpose is narrow: take specific **user-initiated** keyboard and mouse input
 
 ## Status
 
-This repository is in the **planning and bootstrap** stage.
+This repository is in the **bootstrap** stage.
 
 What exists now:
 - project documentation
-- config schema planning
-- test plan
-- initial `Squid.ahk` skeleton
+- JSON profile bootstrap
+- tray controls
+- safety hotkeys
+- candidate-window discovery
+- leader/follower target capture
+- persisted target refresh / reacquire logic
+- startup logging and status reporting
 
 What does **not** exist yet:
-- finished broadcast engine
-- finished window targeting flow
-- finished profile editor
+- mapped input capture
+- rebroadcast send engine
 - production-ready release
 
 ## Project Direction
@@ -59,7 +62,8 @@ Squid/
 ├─ README.md
 ├─ Squid.ahk
 ├─ config/
-│  └─ profiles.example.json
+│  ├─ profiles.example.json
+│  └─ profiles.json        # generated at runtime
 └─ docs/
    ├─ product-spec.md
    ├─ roadmap.md
@@ -94,31 +98,33 @@ Out of scope:
 - large GUI work
 - network sync
 
-## Current Development Order
-
-1. lock documentation
-2. keep a minimal but valid `Squid.ahk` skeleton
-3. add config example
-4. implement window targeting
-5. implement input capture
-6. implement broadcast routing
-7. harden behavior and logging
-
-## Running the Current Skeleton
+## Running the Current Build
 
 Requirements:
 - Windows
 - AutoHotkey v2
 
 Current bootstrap behavior:
-- initializes runtime state
-- creates required folders
+- ensures `config/profiles.json` exists by copying `profiles.example.json` on first run
+- loads and normalizes JSON config
+- registers toggle and emergency-stop hotkeys from config
 - builds tray menu commands
+- discovers candidate windows on demand
+- saves the active window as leader or follower
+- refreshes persisted targets against live windows using stored metadata
 - writes a session log
-- checks for config file presence
-- exposes enable/disable and emergency stop controls
+- shows current state and target summary
 
-It is not a finished broadcaster yet.
+It is still **not** a finished broadcaster yet.
+
+## Current Development Order
+
+1. lock documentation
+2. bootstrap shell
+3. window discovery and target persistence
+4. input capture
+5. broadcast routing
+6. hardening and logging refinement
 
 ## License
 

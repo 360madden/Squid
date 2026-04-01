@@ -16,27 +16,13 @@
     {
       "name": "default",
       "leader": {
+        "name": "Leader",
         "hwnd": 0,
-        "exe": "rift_x64.exe",
-        "titleContains": "RIFT",
+        "exe": "",
+        "titleContains": "",
         "class": ""
       },
-      "followers": [
-        {
-          "name": "Follower1",
-          "hwnd": 0,
-          "exe": "rift_x64.exe",
-          "titleContains": "RIFT",
-          "class": ""
-        },
-        {
-          "name": "Follower2",
-          "hwnd": 0,
-          "exe": "rift_x64.exe",
-          "titleContains": "RIFT",
-          "class": ""
-        }
-      ],
+      "followers": [],
       "mappings": [
         {
           "input": "1",
